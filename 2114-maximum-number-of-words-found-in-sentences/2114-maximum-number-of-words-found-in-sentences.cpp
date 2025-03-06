@@ -4,13 +4,8 @@ public:
         int c=0;
         int max_c=0;
         for(string s:sentences){
-            stringstream ss(s);
-            string word;
-            while (ss >> word) {
-                c++;
-            }
+            c = count(s.begin(),s.end(),' ')+1;
             max_c = max(max_c,c);
-            c=0;
         }
         return max_c;
 
