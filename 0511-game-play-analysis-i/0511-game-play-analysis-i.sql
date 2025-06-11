@@ -1,0 +1,4 @@
+/* Write your T-SQL query statement below */
+SELECT PLAYER_ID, MIN(EVENT_DATE) FIRST_LOGIN
+FROM ACTIVITY
+GROUP BY PLAYER_ID
