@@ -1,0 +1,12 @@
+/* Write your T-SQL query statement below */
+SELECT p.product_id,p.product_name
+FROM PRODUCT P
+WHERE P.PRODUCT_ID IN(
+    SELECT S.PRODUCT_ID 
+    FROM SALES S
+    -- WHERE S.SALE_DATE BETWEEN '2019-01-01' AND '2019-03-31'
+    GROUP BY S.PRODUCT_ID
+    HAVING 
+    MIN(S.SALE_DATE)>='2019-01-01' AND
+    MAX(S.SALE_DATE)<='2019-03-31'
+)
