@@ -1,0 +1,5 @@
+/* Write your T-SQL query statement below */
+SELECT activity_date day,COUNT(DISTINCT SESSION_ID) active_users
+FROM ACTIVITY
+GROUP BY ACTIVITY_DATE
+HAVING ACTIVITY_DATE BETWEEN '2019-06-27' AND '2019-07-27'
