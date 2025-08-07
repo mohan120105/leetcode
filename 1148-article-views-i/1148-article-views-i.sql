@@ -1,5 +1,6 @@
-/* Write your T-SQL query statement below */
-SELECT DISTINCT author_id id
-FROM VIEWS
-WHERE AUTHOR_ID = VIEWER_ID
-ORDER BY AUTHOR_ID ASC
+# Write your MySQL query statement below
+select distinct v.author_id as id
+from views v
+join views c
+on v.author_id=c.viewer_id
+order by v.author_id asc;
