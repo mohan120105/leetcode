@@ -1,6 +1,6 @@
-/* Write your T-SQL query statement below */
-SELECT W2.ID 
-FROM WEATHER W1
-JOIN WEATHER W2
-ON W1.ID=W2.ID-1
-WHERE W1.TEMPERATURE<W2.TEMPERATURE
+# Write your MySQL query statement below
+select w1.Id
+from weather w1
+join weather w2
+on DATEDIFF(w1.recordDate, w2.recordDate) = 1
+where w1.temperature>w2.temperature;
